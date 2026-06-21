@@ -1,74 +1,177 @@
-> Sem nome:
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meu Primeiro Site</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portal profissional de artigos sobre tecnologia, inteligencia artificial, produtividade digital e inovacao.">
+    <meta name="theme-color" content="#0f172a">
+    <meta property="og:title" content="InsightLab - Artigos sobre Tecnologia e IA">
+    <meta property="og:description" content="Leia analises praticas sobre tecnologia, IA, automacao, seguranca digital e futuro do trabalho.">
+    <meta property="og:type" content="website">
+    <title>InsightLab | Artigos sobre Tecnologia e IA</title>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <nav class="nav-shell" aria-label="Navegacao principal">
+        <a class="brand" href="#top" aria-label="InsightLab inicio">
+          <span class="brand-mark">IL</span>
+          <span>
+            <strong>InsightLab</strong>
+            <small>Tecnologia e IA</small>
+          </span>
+        </a>
 
-<style>
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#121212;
-    color:white;
-    text-align:center;
-}
+        <button class="icon-button menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
+          <i data-lucide="menu"></i>
+        </button>
 
-header{
-    background:#1e1e1e;
-    padding:40px;
-}
+        <div class="nav-links" data-nav-links>
+          <a href="#artigos">Artigos</a>
+          <a href="#categorias">Categorias</a>
+          <a href="#newsletter">Newsletter</a>
+          <button class="theme-toggle" type="button" data-theme-toggle>
+            <i data-lucide="moon"></i>
+            <span>Modo escuro</span>
+          </button>
+        </div>
+      </nav>
+      <div class="reading-progress" data-reading-progress></div>
+    </header>
 
-h1{
-    margin:0;
-}
+    <main>
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-media" role="img" aria-label="Mesa moderna com notebook, interface de dados e ambiente de trabalho tecnologico"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Publicacao independente</p>
+          <h1 id="hero-title">Artigos claros sobre tecnologia, IA e o futuro do trabalho.</h1>
+          <p class="hero-copy">Um espaco editorial pronto para publicar ideias, guias e analises com visual profissional, busca inteligente e experiencia de leitura fluida.</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#artigos">
+              <i data-lucide="newspaper"></i>
+              Ler artigos
+            </a>
+            <a class="secondary-button" href="#newsletter">
+              <i data-lucide="mail-plus"></i>
+              Assinar newsletter
+            </a>
+          </div>
+        </div>
+      </section>
 
-section{
-    padding:30px;
-}
+      <section class="toolbar-section" id="categorias" aria-label="Ferramentas de filtragem">
+        <div class="toolbar">
+          <label class="search-box">
+            <i data-lucide="search"></i>
+            <input type="search" data-search-input placeholder="Buscar por titulo, tema ou palavra-chave" autocomplete="off">
+          </label>
+          <div class="filter-tabs" role="tablist" aria-label="Categorias">
+            <button class="filter-chip active" type="button" data-filter="todos">Todos</button>
+            <button class="filter-chip" type="button" data-filter="IA">IA</button>
+            <button class="filter-chip" type="button" data-filter="Tecnologia">Tecnologia</button>
+            <button class="filter-chip" type="button" data-filter="Seguranca">Seguranca</button>
+            <button class="filter-chip" type="button" data-filter="Produtividade">Produtividade</button>
+          </div>
+        </div>
+      </section>
 
-button{
-    padding:12px 20px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-}
+      <section class="featured-section" aria-labelledby="featured-title">
+        <div class="section-heading">
+          <p class="eyebrow">Destaque</p>
+          <h2 id="featured-title">Leitura recomendada</h2>
+        </div>
+        <article class="featured-article" data-featured-card>
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85" alt="Circuitos eletronicos iluminados em detalhe">
+          <div class="featured-body">
+            <span class="tag">IA</span>
+            <h3>Como a inteligencia artificial esta mudando a forma de criar, aprender e decidir</h3>
+            <p>Entenda onde a IA generativa ja cria valor real, quais limites ainda importam e como usar essas ferramentas com criterio profissional.</p>
+            <div class="article-meta">
+              <span><i data-lucide="clock-3"></i> 6 min</span>
+              <span><i data-lucide="calendar"></i> 20 jun 2026</span>
+            </div>
+            <button class="primary-button" type="button" data-open-article="ia-generativa">
+              <i data-lucide="book-open"></i>
+              Abrir artigo
+            </button>
+          </div>
+        </article>
+      </section>
 
-footer{
-    margin-top:30px;
-    padding:20px;
-    background:#1e1e1e;
-}
-</style>
-</head>
+      <section class="articles-section" id="artigos" aria-labelledby="articles-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Biblioteca</p>
+          <h2 id="articles-title">Artigos publicados</h2>
+        </div>
+        <div class="article-grid" data-article-grid></div>
+        <p class="empty-state" hidden data-empty-state>Nenhum artigo encontrado para essa busca.</p>
+      </section>
 
-<body>
+      <section class="newsletter-section" id="newsletter" aria-labelledby="newsletter-title">
+        <div class="newsletter-copy">
+          <p class="eyebrow">Newsletter</p>
+          <h2 id="newsletter-title">Receba novas ideias antes de todo mundo.</h2>
+          <p>Cadastre seu e-mail para receber os proximos artigos, curadorias e guias praticos. O formulario salva a inscricao localmente para demonstracao em site estatico.</p>
+        </div>
+        <form class="newsletter-form" data-newsletter-form>
+          <label for="newsletter-email">E-mail</label>
+          <div class="email-row">
+            <input id="newsletter-email" name="email" type="email" placeholder="voce@email.com" required>
+            <button class="primary-button" type="submit">
+              <i data-lucide="send"></i>
+              Assinar
+            </button>
+          </div>
+          <p class="form-message" data-form-message aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
 
-<header>
-    <h1>Meu Primeiro Site</h1>
-    <p>Criado por Luiz Gustavo</p>
-</header>
+    <footer class="site-footer">
+      <div>
+        <strong>InsightLab</strong>
+        <p>Artigos autorais sobre tecnologia, IA e transformacao digital.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#top">Inicio</a>
+        <a href="#artigos">Artigos</a>
+        <a href="#newsletter">Newsletter</a>
+      </div>
+    </footer>
 
-<section>
-    <h2>Bem-vindo!</h2>
-    <p>Se você está vendo esta página, seu site está funcionando.</p>
+    <dialog class="article-dialog" data-article-dialog>
+      <div class="dialog-shell">
+        <button class="icon-button dialog-close" type="button" aria-label="Fechar artigo" data-close-dialog>
+          <i data-lucide="x"></i>
+        </button>
+        <img class="dialog-image" data-dialog-image alt="">
+        <div class="dialog-content">
+          <div class="dialog-meta">
+            <span class="tag" data-dialog-category></span>
+            <span data-dialog-readtime></span>
+          </div>
+          <h2 data-dialog-title></h2>
+          <p class="dialog-summary" data-dialog-summary></p>
+          <div class="dialog-actions">
+            <button class="secondary-button" type="button" data-bookmark-current>
+              <i data-lucide="bookmark"></i>
+              Favoritar
+            </button>
+            <button class="secondary-button" type="button" data-share-current>
+              <i data-lucide="share-2"></i>
+              Compartilhar
+            </button>
+          </div>
+          <div class="article-body" data-dialog-body></div>
+        </div>
+      </div>
+    </dialog>
 
-    <button onclick="mensagem()">
-        Clique Aqui
+    <button class="back-to-top" type="button" aria-label="Voltar ao topo" data-back-to-top>
+      <i data-lucide="arrow-up"></i>
     </button>
-</section>
-
-<footer>
-    © 2026 - Luiz Gustavo
-</footer>
-
-<script>
-function mensagem(){
-    alert("Parabéns! Seu site está online!");
-}
-</script>
-
-</body>
+  </body>
 </html>
